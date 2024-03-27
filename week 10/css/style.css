@@ -1,0 +1,296 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* --------------------------------
+            Custom Styles
+----------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    margin: 16px 0 8px;
+}
+
+h1 {
+    font-size: 34px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    margin: 14px 0;
+}
+
+a, a:visited {
+    color: inherit;
+}
+
+a:hover, a:focus {
+    color: #00ADDB;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+section {
+    margin-bottom: 80px;
+}
+
+/* ---------------- Header --------------- */
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.mobile-logo {
+    width: 100px;
+}
+
+.desktop-logo {
+    display: none;
+}
+
+.banner {
+    position: relative;
+    background-color: gray;
+    height: 600px;
+    background-image: url("../images/mobile-banner.jpg");
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner h1 {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-list li {
+    border-bottom: 1px solid grey;
+}
+
+.nav-list li a {
+    display: block;  
+    /* This ensures that the entire list item is clickable, not just the text */
+    padding: 16px 0;
+    text-decoration: none;
+}
+
+.nav-list li a.active {
+    color: #00ADDB;
+}
+
+/* .nav-list li a.active,
+.nav-list li a:hover {
+    background-color: #00ADDB;
+    color: white;
+} */
+
+
+/* ------------ App Section ------------- */
+
+.app-section .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-section .btn {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid grey;
+    border-radius: 6px;
+}
+
+/* 
+I want the button to take the full width of the container.
+Optional, but you can set a flexbox to description too */
+.app-section .description {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-section .btn:hover,
+.app-section .btn:focus {
+    background-color: #00ADDB;
+    color: white;
+}
+
+
+/* --------- Footer ---------- */
+
+footer {
+    padding: 20px 0;
+    border-top: 2px solid #00ADDB;
+}
+
+.copyright {
+    float: right;
+}
+
+
+
+@media screen and (min-width: 700px) {
+    h1 {
+        font-size: 40px;
+    }
+    
+    h2 {
+        font-size: 32px;
+    }
+    
+    h3 {
+        font-size: 28px;
+    }
+
+
+    /* -------------- Header --------------- */
+
+    header {
+        text-align: left;
+    }
+
+    .mobile-logo {
+        display: none;
+    }
+    
+    .desktop-logo {
+        display: inline-block;
+        width: 200px;
+    }
+
+    .banner {
+        background-image: url(../images/desktop-banner.jpg)
+    }
+
+    .banner h1 {
+        color: white;
+    }
+
+    .nav-list {
+        flex-direction: row;
+    }
+
+    .nav-list li {
+        flex: 1; 
+        /* This makes the list items take up an equal amount of space, so they are evenly distributed across the container */
+    
+        border-bottom: none;
+        border-right: 1px solid grey;
+    }
+
+    .nav-list li:last-child {
+        border-right: none;
+    }
+
+
+    /* --------- App Section ------- */
+
+    .app-section .content {
+        flex-direction: row;
+        align-items: flex-start;
+
+        /* flex-start ensures that the flex items (in this case, the image and the description) are aligned towards the start of the cross-axis. This means they will align to the top of their container, which is helpful for ensuring that the image maintains its original aspect ratio and doesn't stretch to fill the available height. */
+    }
+
+    .app-section img {
+        width: 400px;
+        margin-right: 24px;
+    }
+
+    .app-section .description {
+        align-items: flex-start;
+        /* Set the width of the button back to normal */
+    }
+
+
+    .app-section .btn {
+        /* Make button right-aligned */
+        /* align-self: flex-end; */ 
+    }
+}
+
+
+.flex-container {
+    display: flex;
+}
+
+

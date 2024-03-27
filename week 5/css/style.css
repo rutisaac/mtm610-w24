@@ -1,0 +1,35 @@
+body {
+    background-color: aliceblue;
+    color: red;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+h1 {
+    color: rgb(212, 215, 13);
+  }
+h1,h2,h3,h4 {
+    text-decoration: underline;
+}
+
+#treat {
+    background-color: lightyellow;
+}
+.pink-link{
+    color: rgb(216,0,249);
+    background-color: lightskyblue;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+.large-text{
+    font-size: 24px;
+}
+[href="#treat"] {
+    font-weight: bolder;
+    background-color: chartreuse;
+}
+article p{
+    font-size: 30px;
+    color: blue()
+}
